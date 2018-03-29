@@ -15,7 +15,7 @@ namespace Webshop.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Products()
         {
             ViewData["Message"] = "Your application description page.";
 
