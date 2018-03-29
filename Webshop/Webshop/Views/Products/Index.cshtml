@@ -14,7 +14,7 @@
     @foreach(var products in Model)
     {
         <div>
-            <h2>@(Model.Title)</h2> 
+            <h2>@(products.Title)</h2> 
             <img src="@(products.Image)">
             <p>@(products.Description)</p> 
             <a href="#"><button>Read More</button></a>

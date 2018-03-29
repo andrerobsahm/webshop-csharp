@@ -12,12 +12,12 @@ using MySql.Data.MySqlClient;
 namespace Webshop.Controllers
 
 {
-    public class ProductController : Controller
+    public class ProductsController : Controller
     {
         
         private readonly string connectionString;
 
-        public ProductController(IConfiguration configuration)
+        public ProductsController(IConfiguration configuration)
         {
             this.connectionString = configuration.GetConnectionString("ConnectionString");
         }
@@ -38,7 +38,6 @@ namespace Webshop.Controllers
                     return NotFound();
                 }
 
-                //return View(products);
             }
 
         }
