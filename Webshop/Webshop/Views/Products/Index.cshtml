@@ -1,0 +1,28 @@
+﻿@model List<Webshop.Models.ProductViewModel>
+
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+
+<div class="products">
+
+    @foreach(var products in Model)
+    {
+        <div>
+            <h2>@(Model.Title)</h2> 
+            <img src="@(products.Image)">
+            <p>@(products.Description)</p> 
+            <a href="#"><button>Read More</button></a>
+            <div>
+                <p>Price: $@(products.Price)</p> 
+                <a href="#"><button>Add To Cart</button></a>
+            </div>
+        </div>
+    }
+
+</div>

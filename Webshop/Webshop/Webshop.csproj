@@ -6,10 +6,25 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="MySql.Data" Version="6.10.6" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Products\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Products\Index.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Products\Index.html" />
+    <None Remove="Views\Home\Products.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Home\Products.cshtml" />
+  </ItemGroup>
 </Project>
