@@ -4,18 +4,13 @@
 <!--    ViewData["Title"] = @Model.Title;-->
 }
 
-
-<div>
-    
-    <div>
+<a href="/products"><button type="button" class="btn btn-info">View all basses</button></a>
+<div> 
         <h2>@(Model.Title)</h2>
-        <p>@(Model.Description)</p>
-        <p>@(Model.Price)</p>
-    </div>
-    <div>
-        <img src="@(Model.Image)">
-    </div>
-
+        <img src="@(Model.Image)" alt="Product image">
 </div>
-
-<a href="/products"><button type="button" class="btn btn-info">View all products</button></a>
+<div>
+    <p>@(Model.Description)</p>
+    <p>€@(Model.Price)</p>
+</div>
+<a href="#"><button type="button" class="btn btn-primary">Add To Cart</button></a>

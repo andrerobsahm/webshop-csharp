@@ -2,26 +2,25 @@
 
 
 @{
-    ViewData["Title"] = "All Products";
+    ViewData["Title"] = "All our Bass guitars";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h1>@ViewData["Title"]</h1>
 
 
-<div class="products">
+<div class="body-content">
 
     @foreach(var products in Model)
     {
-        <div>
+        <div class="product-grid">
             <h2>@(products.Title)</h2> 
-            <img src="@(products.Image)">
-            <p>@(products.Description)</p> 
-            <a href="/products/item/@(products.Id)"><button type="button" class="btn btn-info">Read More</button></a>
+            <a href="/products/item/@(products.Id)"><img class="bass_image" src="@(products.Image)"></a>
             <div>
-                <p>Price: $@(products.Price)</p> 
-                <a href="#"><button type="button" class="btn btn-info">Add To Cart</button></a>
+                <p>Price: €@(products.Price)</p> 
+                <a href="/products/item/@(products.Id)"><button type="button" class="btn btn-info">Read More</button></a>
+                <a href="#"><button type="button" class="btn btn-primary">Add To Cart</button></a>
             </div>
         </div>
+    <hr>
     }
-
 </div>

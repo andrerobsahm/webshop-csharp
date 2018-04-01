@@ -3,18 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Webshop</title>
+    <title>@ViewData["Title"] - The Bass Shop</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+<!--        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />-->   
+
+        </environment>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -26,13 +28,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Webshop</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">The Bass Shop</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="products" asp-action="Index">Products</a></li>
-                    <li><a asp-area="" asp-controller="home" asp-action="contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="home" asp-action="index">Home</a></li>
+                    <li><a asp-area="" asp-controller="products" asp-action="index">Products</a></li>
+                    <li><a asp-area="" asp-controller="home" asp-action="contact">Contact us</a></li>
                 </ul>
             </div>
         </div>
@@ -41,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - Webshop</p>
+            <p>&copy; 2018 | THE BASS SHOP</p>
         </footer>
     </div>
 

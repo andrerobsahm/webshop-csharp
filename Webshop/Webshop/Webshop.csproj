@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <Folder Include="Views\Products\" />
+    <Folder Include="Views\Cart\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\Products\Index.cs" />

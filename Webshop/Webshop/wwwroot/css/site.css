@@ -1,14 +1,32 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Shrikhand|Ubuntu');
+
+h1, h2 {
+    font-family: 'Shrikhand', cursive;
+    color: #fff;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+body {
     padding-top: 50px;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    background-color: #000;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px
+    padding: 20px;
 }
+
+.carousel img {
+    width: 100%;
+    max-height: 400px; }
 
 /* Carousel */
 .carousel-caption p {
@@ -21,10 +39,8 @@
     width: 100%
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px
-}
+hr {
+    border-top: 5px solid #1c1c1c;}
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
@@ -32,4 +48,13 @@
     .carousel-caption {
         display: none
     }
+}
+
+img {
+    max-width: 600px;
+    height: auto;
+    margin: 3% 0;}
+
+product-grid {
+    display: flex;
 }

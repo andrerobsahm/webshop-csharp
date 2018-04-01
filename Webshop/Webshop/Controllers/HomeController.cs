@@ -17,7 +17,7 @@ namespace Webshop.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "For any inquiries, please contact us!";
 
             return View();
         }
