@@ -27,7 +27,7 @@ namespace Webshop.Controllers
         {
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                var products = connection.Query<ProductViewModel>("Select * from Products").ToList();
+                var products = connection.Query<ProductsViewModel>("Select * from Products").ToList();
             
                 if (products != null)
                 {
@@ -37,25 +37,24 @@ namespace Webshop.Controllers
                 {
                     return NotFound();
                 }
-
             }
 
         }
 
-        public IActionResult SingleProduct(string id)
+        public IActionResult Item(string Id)
         {
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                var singleproduct = connection.QuerySingleOrDefault<ProductViewModel>("Select * from Products where id = @id", new { id });
-                if (singleproduct != null)
+                var item = connection.QuerySingleOrDefault<ProductsViewModel>("Select * from Products where id = @id", new { Id });
+                if (item != null)
                 {
-                    return View(singleproduct);
+                    return View(item);
                 }
                 else
                 {
-                    return NotFound();
+                    return NotFound("There is no such product.");
                 }
-            }
+            }   
         }
 
     }

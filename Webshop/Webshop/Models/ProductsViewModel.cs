@@ -2,7 +2,7 @@
 
 namespace Webshop.Models
 {
-    public class ProductViewModel
+    public class ProductsViewModel
     {
         public int Id { get; set; }
 

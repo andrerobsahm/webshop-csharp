@@ -1,0 +1,21 @@
+﻿@model Webshop.Models.ProductsViewModel
+
+@{
+<!--    ViewData["Title"] = @Model.Title;-->
+}
+
+
+<div>
+    
+    <div>
+        <h2>@(Model.Title)</h2>
+        <p>@(Model.Description)</p>
+        <p>@(Model.Price)</p>
+    </div>
+    <div>
+        <img src="@(Model.Image)">
+    </div>
+
+</div>
+
+<a href="/products"><button type="button" class="btn btn-info">View all products</button></a>

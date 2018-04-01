@@ -1,12 +1,11 @@
-﻿@model List<Webshop.Models.ProductViewModel>
+﻿@model List<Webshop.Models.ProductsViewModel>
 
 
 @{
-    ViewData["Title"] = "Products";
+    ViewData["Title"] = "All Products";
 }
 
 <h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
 
 <div class="products">
@@ -17,10 +16,10 @@
             <h2>@(products.Title)</h2> 
             <img src="@(products.Image)">
             <p>@(products.Description)</p> 
-            <a href="#"><button>Read More</button></a>
+            <a href="/products/item/@(products.Id)"><button type="button" class="btn btn-info">Read More</button></a>
             <div>
                 <p>Price: $@(products.Price)</p> 
-                <a href="#"><button>Add To Cart</button></a>
+                <a href="#"><button type="button" class="btn btn-info">Add To Cart</button></a>
             </div>
         </div>
     }
