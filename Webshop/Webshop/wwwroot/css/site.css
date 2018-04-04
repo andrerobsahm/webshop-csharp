@@ -1,15 +1,21 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Shrikhand|Ubuntu');
 
-h1, h2 {
+h1, h2, h3, h4, p, th, td {
+    color: #f8f8ff;
+}
+
+h1 {
     font-family: 'Shrikhand', cursive;
-    color: #fff;
+}
+
+p, h2, h3, h4, th, td {
+    font-family: 'Ubuntu', sans-serif;
 }
 
 p {
-    font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
-    color: #fff;
 }
+
 
 
 body {
@@ -58,3 +64,18 @@ img {
 product-grid {
     display: flex;
 }
+
+/*bass-section {
+}
+
+.col-1 {
+    display:flex;
+    flex:1;
+    float: left;
+    margin-right:1%;
+}
+col-2 {
+    display: flex;
+    flex: 1;
+    float: right
+}*/
