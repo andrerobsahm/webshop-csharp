@@ -26,6 +26,7 @@
   <ItemGroup>
     <None Remove="Views\Products\Index.html" />
     <None Remove="Views\Home\Products.cshtml" />
+    <None Remove="wwwroot\images\cart-2x.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Products.cshtml" />

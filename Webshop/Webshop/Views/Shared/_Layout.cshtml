@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-<!--        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />-->   
+<!--    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />-->   
 
         </environment>
 </head>
@@ -36,7 +36,9 @@
                     <li><a asp-area="" asp-controller="products" asp-action="index">Products</a></li>
                     <li><a asp-area="" asp-controller="home" asp-action="contact">Contact us</a></li>
                 </ul>
-                    <img src="/open-iconic/svg/cart.svg">   
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart</a></li>
+                </ul>
             </div>
         </div>
     </nav>
