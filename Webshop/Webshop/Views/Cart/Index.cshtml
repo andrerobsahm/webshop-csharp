@@ -1,38 +1,47 @@
 ﻿@model List<Webshop.Models.CartViewModel>
 
 @{
-    ViewData["Title"] = "Selected products";
+    ViewData["Title"] = "Cart";
     int cost = 0;
 }
 <h2>@ViewData["Title"]</h2>
 
 <p>This is where you can see everything you have put in your cart.</p>
 
-<a href="/products"><button class="btn btn-primary">Keep Browsing</button></a>
-
-<table class="cart">
-    <tr class="row">
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        
-    @foreach(var product in Model)
-    {
-        <tr class="row">
-            <td>@(product.Title)</td>
-            <td>@(product.Price)</td>
-            <td>@(product.Quantity)</td>
-            <td>
-                <form action="/cart/removefromcart/@(product.Product_id)" method="post">
-                    <abbr title="Delete item from cart"><input class="btn btn-danger" type="submit" value="X" /></abbr>
-                </form>
-            </td>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Option</th>
         </tr>
-        <br>
-        cost += (product.Price*product.Quantity);
-    }
-</table>
-       <h4>Total cost: €@cost </h4>
-    
+    </thead>
 
+    <tbody>
+        @foreach(var product in Model)
+        {
+            <tr>
+                <td>@(product.Title)</td>
+                <td>@(product.Price)</td>
+                <td>@(product.Quantity)</td>
+                <td>
+                    <form action="/cart/removefromcart/@(product.Product_id)" method="post">
+                        <abbr title="Delete item from cart"><input class="btn btn-danger" type="submit" value="X" /></abbr>
+                    </form>
+                </td>
+            </tr>
+            <br>
+            cost += (product.Price*product.Quantity);
+        }
+    </tbody>
+</table>
+
+<h4>Total cost: <b>€ @cost</b></h4><small><i>including VAT.</i></small>
+<br>
+<br>
+<div class="mt-5">
+    <h4>Are you done?</h4>
+    <a href="/products"><button class="btn btn-primary">Keep Browsing</button></a>
     <a href="/checkout"><button class="btn btn-info">Proceed to Checkout</button></a>
+</div>

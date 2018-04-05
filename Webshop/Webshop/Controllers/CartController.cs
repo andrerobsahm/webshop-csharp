@@ -83,7 +83,7 @@ namespace Webshop.Controllers
 
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                var removeFromCart = "DELETE FROM cart WHERE cart.cart_id = @cartId AND cart.product_id = @id LIMIT 1;";
+                var removeFromCart = "DELETE FROM Cart WHERE cart.cart_id = @cartId AND cart.product_id = @id LIMIT 1;";
                     connection.Execute(removeFromCart, new { Id, cartId });
             }
             return RedirectToAction("Index");

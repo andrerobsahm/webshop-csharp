@@ -5,19 +5,24 @@
 }
 
 <a href="/products"><button type="button" class="btn btn-info">View all basses</button></a>
-<div class="bass-section">
-    <h2>@(Model.Title)</h2>
 
-    <div class="col-1"> 
-        <img src="@(Model.Image)" alt="Product image">
-    </div>
+<div class="container">
+
+    <section class="row">
+        <h2>@(Model.Title)</h2>
+
+        <article class="col"> 
+            <img src="@(Model.Image)" alt="Product image">
+        </article>
+        
+        <article class="col">
+            <p>@(Model.Description)</p>
+            <p>€@(Model.Price)</p>
+        </article>
+    </section>
+
+    <form action="/cart/addtocart/@(Model.Id)" method="post">
+       <input class="btn btn-primary" type="submit" value="Buy now!" />
+    </form>
     
-    <div class="col-2">
-        <p>@(Model.Description)</p>
-        <p>€@(Model.Price)</p>
-    </div>
 </div>
-
-<form action="/cart/addtocart/@(Model.Id)" method="post">
-   <input class="btn btn-primary" type="submit" value="Buy now!" />
-</form>

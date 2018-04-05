@@ -12,15 +12,19 @@
 
     @foreach(var products in Model)
     {
-        <div class="product-grid">
+        <section>
             <h2>@(products.Title)</h2> 
             <a href="/products/item/@(products.Id)"><img class="bass_image" src="@(products.Image)"></a>
-            <div>
-                <p>Price: €@(products.Price)</p> 
+            <p>Price: €@(products.Price)</p> 
+
+            <article>
                 <a href="/products/item/@(products.Id)"><button type="button" class="btn btn-info">Read More</button></a>
-                <button class="btn btn-primary" type="submit">Add To Cart</button>
-            </div>
-        </div>
+                <form action="/cart/addtocart/@(products.Id)" method="post">
+                   <input class="btn btn-primary" type="submit" value="Buy now!" />
+                </form>            
+            </article>
+        
+        </section>
     <hr>
     }
 </div>
