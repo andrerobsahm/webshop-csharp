@@ -1,7 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=RockSalt|Ubuntu');
 
-h1, h2, h3, h4, p, th, td, small {
-    color: #f8f8ff;
+h1, h2, h3, h4, p, th, td, small, label {
+    color: #f8f8ff
 }
 
 h1 {
