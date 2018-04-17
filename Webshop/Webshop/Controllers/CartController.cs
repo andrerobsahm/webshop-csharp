@@ -42,7 +42,6 @@ namespace Webshop.Controllers
 
             using (var connection = new MySqlConnection(this.connectionString))
             {
-
                 var cart = connection.Query<CartViewModel>(
                     "SELECT cart.cart_id, sum(cart.quantity) " +
                     "AS quantity, cart.product_id, products.price, products.title " +
@@ -89,5 +88,28 @@ namespace Webshop.Controllers
             return RedirectToAction("Index");
         }
 
+
+        //Here we select what we can see on the checkout page
+        public IActionResult Checkout()
+        {
+            var cartId = GetOrCreateCartId();
+
+            using (var connection = new MySqlConnection(this.connectionString))
+            {
+                var checkout = connection.Query<CheckoutViewModel>("SELECT cart.cart_id, sum(cart.quantity*products.price) " +
+                    "AS sum FROM products " +
+                    "JOIN cart " +
+                    "ON cart.product_id = products.id " +
+                    "WHERE cart.cart_id = @cartId;",
+                    new { cartId }).ToList();
+
+                
+                return View(checkout);
+            }
+
+        }
+
+        [HttpPost]         public IAsyncResult AddToOrder(int id)         {             var cartId = GetOrCreateCartId();              using (var connection = new MySqlConnection(this.connectionString))             {                 var addToOrder = "INSERT INTO Order(order_id, cart_id, sum, name, email, adress, city, zip) VALUES(@id, @cartId, @sum, @name, @email, @adress, @city, @zip)";
+                connection.Execute(addToOrder, new { id, cartId, quantity });             }             return RedirectToAction(index);          }
     }
 }

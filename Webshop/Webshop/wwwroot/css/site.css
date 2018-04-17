@@ -1,15 +1,15 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=RockSalt|Ubuntu');
 
-h1, h2, h3, h4, p, th, td, small, label {
-    color: #f8f8ff
+h1, h2, h3, h4, p, th, td, small, label, address {
+    color: #f8f8ff
 }
 
 h1 {
-    font-family: 'RockSalt', cursive
+    font-family: 'RockSalt', cursive
 }
 
-p, h2, h3, h4, th, td {
-    font-family: 'Ubuntu', sans-serif;
+p, h2, h3, h4, th, td, address {
+    font-family: 'Ubuntu', sans-serif
 }
 
 p {
@@ -60,6 +60,11 @@ img {
     max-width: 600px;
     height: auto;
     margin: 3% 0;}
+
+.underline {
+    border-top: 2px solid #fff;
+    width:50%;
+}
 
 /*bass-section {
 }

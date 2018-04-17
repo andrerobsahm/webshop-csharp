@@ -6,8 +6,7 @@ namespace Webshop.Models
 {
     public class CheckoutViewModel
     {
-        public List<CartViewModel> Cart { get; set; }
-
-        public int Sum { get; set; }
+        public string Cart_id { get; set; }
+        public float Sum { get; set; }
     }
 }

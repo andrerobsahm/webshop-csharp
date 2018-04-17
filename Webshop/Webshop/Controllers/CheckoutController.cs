@@ -23,12 +23,8 @@ namespace Webshop.Controllers
             using (var connection = new MySqlConnection(this.connectionString))
             {
                 var checkout = connection.Query<CheckoutViewModel>("Select * from Cart").ToList();
-
                 return View(checkout);
-                }
-
+            }
         }
-
-
     }
 }
