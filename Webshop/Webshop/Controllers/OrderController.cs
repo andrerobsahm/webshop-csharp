@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using Webshop.Models;
-
-namespace Webshop.Models
+namespace Webshop.Controllers
 {
-    public class CheckoutViewModel
+    public class OrderController
     {
-        public string Cart_id { get; set; }
-        public float Sum { get; set; }
-
         public int Id { get; set; }
+        public string CartId { get; set; }
+        public int Sum { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
