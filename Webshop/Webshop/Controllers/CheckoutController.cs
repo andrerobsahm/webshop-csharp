@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
@@ -61,8 +62,8 @@ namespace Webshop.Controllers
 
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                var addToOrder = "INSERT INTO orders(cart_id, sum, name, email, address, city, zip) VALUES(@cartId, @sum, @name, @email, @address, @city, @zip)";
-                connection.Execute(addToOrder, new
+                var addToOrder = "INSERT INTO orders(cart_id, sum, name, email, address, city, zip) VALUES(@cartId, @sum, @name, @email, @address, @city, @zip); SELECT last_insert_id();";
+                var cart_id = connection.QuerySingleOrDefault<int>(addToOrder, new
                 {
                     cartId = @cartId,
                     sum = @sum,
@@ -72,10 +73,22 @@ namespace Webshop.Controllers
                     city = @city,
                     zip = @zip,
                 });
+
+                List<ProductsViewModel> cartItems = connection.Query<ProductsViewModel>("SELECT products.id FROM products JOIN cart ON cart.product_id = products.id WHERE cart_id = @cartId",
+                                                                new { cartId = cartId }).ToList();
+
+                foreach (Models.ProductsViewModel item in cartItems)
+                {
+                    connection.Execute("INSERT INTO OrderedProducts(cart_id, product_id) VALUES (@cartId, @product_id)",
+                                       new { cartId = cart_id, product_id = item.Id});
+                }
+
+                connection.Execute("DELETE FROM Cart WHERE cart_id = @cartId",
+                                   new { cartId = cartId });
             }
+            this.Response.Cookies.Delete("cartId");
             return RedirectToAction("Index", "Home");
 
         }
-
     }
 }
