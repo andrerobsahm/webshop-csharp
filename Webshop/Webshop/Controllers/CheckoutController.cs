@@ -42,11 +42,7 @@ namespace Webshop.Controllers
 
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                var checkout = connection.Query<CheckoutViewModel>("SELECT cart.cart_id, sum(cart.quantity*products.price) " +
-                    "AS sum FROM products " +
-                    "JOIN cart " +
-                    "ON cart.product_id = products.id " +
-                    "WHERE cart.cart_id = @cartId;",
+                var checkout = connection.Query<CheckoutViewModel>("SELECT cart.cart_id, (SELECT SUM(cart.quantity*products.price) FROM products JOIN cart ON cart.product_id = products.id WHERE cart.cart_id = @CartId) AS sum, products.title, quantity FROM products JOIN cart ON cart.product_id = products.id WHERE cart.cart_id = @CartId",
                     new { cartId }).ToList();
 
 

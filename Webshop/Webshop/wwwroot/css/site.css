@@ -4,6 +4,10 @@ h1, h2, h3, h4, p, th, td, small, label, address {
     color: #f8f8ff
 }
 
+li {
+    color: #ccc;
+}
+
 h1 {
     font-family: 'RockSalt', cursive
 }

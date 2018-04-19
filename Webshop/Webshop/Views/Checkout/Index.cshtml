@@ -5,8 +5,18 @@
 }
 
 <h2>Yeah! Soon you're done with your purchase!</h2>
+        <p>Your selected products:</p>
+        <ul>
+            @foreach(var checkout in Model)
+            {
+                <li>@(checkout.Title) - @(checkout.Quantity) piece</li>
+            }
+        </ul>
 
-<h4>To complete your order, please enter your credentials below</h4>
+        <h3>Total price: €@(Model[0].Sum)</h3>
+
+        <br>
+        <h4>To complete your order, please enter your credentials below</h4>
 <br>
 
 <form action="checkout/addToOrder" method="post">
@@ -48,10 +58,5 @@
         </div>
     </div>
 
-    @foreach(var checkout in Model)
-    {
-        <h3>Total price: €@(checkout.Sum)</h3>
-    }
-    
     <button type="submit" class="btn btn-primary">Send order</button>
 </form>
