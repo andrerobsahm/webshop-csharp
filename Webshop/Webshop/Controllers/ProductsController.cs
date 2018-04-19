@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using Webshop.Models;
 using MySql.Data.MySqlClient;
+using Webshop.Services.Implementations;
+using Webshop.Repostories.Implementations;
+using Webshop.Repostories;
 
 namespace Webshop.Controllers
 
@@ -15,46 +18,26 @@ namespace Webshop.Controllers
     public class ProductsController : Controller
     {
         
-        private readonly string connectionString;
+        private readonly ProductsService productsService;
 
         public ProductsController(IConfiguration configuration)
         {
-            this.connectionString = configuration.GetConnectionString("ConnectionString");
+            var connectionString = configuration.GetConnectionString("ConnectionString");
+
+            this.productsService = new ProductsService(new ProductsRepository(connectionString));
         }
 
 
         public IActionResult Index()
         {
-            using (var connection = new MySqlConnection(this.connectionString))
-            {
-                var products = connection.Query<ProductsViewModel>("Select * from Products").ToList();
-            
-                if (products != null)
-                {
-                    return View(products);
-                }
-                else
-                {
-                    return NotFound();
-                }
-            }
-
+            var products = this.productsService.GetAll();
+            return View(products);
         }
 
         public IActionResult Item(string Id)
         {
-            using (var connection = new MySqlConnection(this.connectionString))
-            {
-                var item = connection.QuerySingleOrDefault<ProductsViewModel>("Select * from Products where id = @id", new { Id });
-                if (item != null)
-                {
-                    return View(item);
-                }
-                else
-                {
-                    return NotFound("There is no such product.");
-                }
-            }   
+            var item = this.productsService.Get(Id);
+            return View(item);
         }
 
     }

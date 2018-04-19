@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webshop", "Webshop\Webshop.csproj", "{2124BFA2-4D36-48DD-8059-938FB41F332F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebshopUnitTests", "WebshopUnitTests\WebshopUnitTests.csproj", "{5DC1603D-0CEB-4C70-8E62-69FEDB149636}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webshop.UnitTests", "WebshopUnitTests\Webshop.UnitTests.csproj", "{5DC1603D-0CEB-4C70-8E62-69FEDB149636}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

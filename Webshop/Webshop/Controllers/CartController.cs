@@ -69,7 +69,12 @@ namespace Webshop.Controllers
                 var addToCart = "INSERT INTO Cart (product_id, cart_id, quantity) VALUES(@id, @cartId, @quantity)";
                 connection.Execute(addToCart, new { id, cartId, quantity });
             }
-            return RedirectToAction("Item", "Products", new { @id=id });
+            return RedirectToAction("Index", "Products", new { @id=id });
+        }
+
+        public object products(string id)
+        {
+            throw new NotImplementedException();
         }
 
 

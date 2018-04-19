@@ -22,6 +22,10 @@
     <Folder Include="Views\Cart\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="Views\Checkout\" />
+    <Folder Include="Repostories\" />
+    <Folder Include="Services\" />
+    <Folder Include="Repostories\Implementations\" />
+    <Folder Include="Services\Implementations\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\Products\Index.cs" />
