@@ -1,4 +1,5 @@
 # Webshop assignment
+## The Bass Shop
 
 <img src="https://media.giphy.com/media/8B9hGl5neRTNK/giphy.gif" width="100%">
 
@@ -12,9 +13,8 @@
 ## Author
 André Robsahm
 
-#### Test users
-- Coming up...
-
+#### Test user
+- <a href="https://github.com/AddeNordh">Andreas Nordh</a>
 
 ---
 _André Robsahm, Yrgo Göteborg, 2018_
