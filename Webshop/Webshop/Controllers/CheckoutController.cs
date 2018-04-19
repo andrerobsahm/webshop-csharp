@@ -86,7 +86,7 @@ namespace Webshop.Controllers
                 connection.Execute("DELETE FROM Cart WHERE cart_id = @cartId",
                                    new { cartId = cartId });
             }
-            this.Response.Cookies.Delete("cartId");
+            this.Response.Cookies.Delete("CartId");
             return RedirectToAction("Index", "Home");
 
         }

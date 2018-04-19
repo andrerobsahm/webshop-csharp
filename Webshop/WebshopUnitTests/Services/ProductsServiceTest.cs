@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Webshop.Services.Implementations;
 using Webshop.Repostories;
+using Webshop.Repostories.Implementations;
 using Webshop.Models;
 
 namespace Webshop.UnitTests.Services
